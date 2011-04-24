@@ -12,17 +12,15 @@ endif
 let b:loaded_toggle_hloverlinelength = 1
 
 fun! s:ToggleHlOverLength()
-  if !exists("s:old_hloverlength")
-    redir => s:old_hloverlength
-    silent! hi OverLength
-    redir END
+  if !exists("s:hloverlength")
+    let s:hloverlength="ctermbg=red ctermfg=white guibg=#592929"
+    exec "hi OverLength ".s:hloverlength
+    match OverLength /\%78v.\+/
+    echo "OverLength Enabled!"
+  else
+    unlet s:hloverlength
     hi clear OverLength
     echo "OverLength Disabled!"
-  else
-    let s:old_hloverlength="ctermbg=red ctermfg=white guibg=#592929"
-    exec "hi OverLength ".s:old_hloverlength
-    unlet s:old_hloverlength
-    echo "OverLength Enabled!"
   endif
 endfunction
 
