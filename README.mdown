@@ -1,0 +1,11 @@
+vim-togglehloverlength ![Project status](http://stillmaintained.com/halcyon/vim-togglehloverlength.png)
+======================
+
+Installation
+------------
+1. Copy the file `plugin/toggle_hloverlength.vim` to your `~/.vim/plugin` directory
+2. There is no step 2.
+
+Usage
+-----
+Press `<F11>` to toggle highlighting overlength on and off
